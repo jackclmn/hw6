@@ -164,10 +164,16 @@ print("\n\n***** Problem 10 *****")
 ## We have provided files samplehw6_1.txt and samplehw6_2.txt for your use for this problem, which hopefully you have downloaded, so you can test with those file names! The test below also relies upon these files. Of course, you could also create other files for testing.
 
 # Define readfiles (make sure to close the file reference in the right place)
-
+def readfiles(filenames):
+	for f in filenames:
+		fileref = open(f, 'r')
+		for line in fileref:
+			yield line
+		fileref.close()
 
 # Define len_check
-
+def len_check(lines):
+	return (line for line in lines if len(line.split()) > 40)
 
 # Define main_filterer
 
