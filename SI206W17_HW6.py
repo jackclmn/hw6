@@ -173,7 +173,7 @@ def readfiles(filenames):
 
 # Define len_check
 def len_check(lines):
-	return (line for line in lines if len(line.split()) > 40)
+	return (line for line in lines if len(line) > 40)
 
 # Define main_filterer
 
